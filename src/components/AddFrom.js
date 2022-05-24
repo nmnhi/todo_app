@@ -19,16 +19,16 @@ class AddForm extends React.Component {
         })
     }
 
-    handleSubmit = (event) =>{
+    handleSubmit = (event) => {
         event.preventDefault()
         console.log(">>> Check data input:", this.state)
-        if(!this.state.title || !this.state.salary){
+        if (!this.state.title || !this.state.salary) {
             alert("Missing parameter!!!")
             return;
         }
 
         this.props.addNewJob({
-            id: Math.floor(Math.random()* 1001),
+            id: Math.floor(Math.random() * 1001),
             title: this.state.title,
             salary: this.state.salary
         })
@@ -39,7 +39,7 @@ class AddForm extends React.Component {
         })
     }
 
-    
+
 
     render() {
         return (
@@ -47,27 +47,27 @@ class AddForm extends React.Component {
                 <form>
                     <label htmlFor="fname">Title's Jobs</label><br />
                     <input
-                        type="text" 
+                        type="text"
                         value={this.state.title}
                         onChange={(event) => this.handleChangeTitleJobs(event)}
                     />
                     <br />
                     <label htmlFor="lname">Salary</label><br />
                     <input
-                        type="text" 
-                        value={this.state.salary} 
+                        type="text"
+                        value={this.state.salary}
                         onChange={(event) => this.handleChangeSalary(event)}
                     />
                     <br /><br />
                     <input type="submit"
                         onClick={(event) => this.handleSubmit(event)}
                     />
-                </form>          
-                           
-            </>
-      )
+                </form>
 
-        
+            </>
+        )
+
+
     }
-  }
-  export default AddForm;
+}
+export default AddForm;

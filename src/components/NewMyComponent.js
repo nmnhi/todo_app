@@ -10,9 +10,9 @@ class NewMyComponent extends React.Component {
         firstName: "",
         lastName: "",
         arrJobs: [
-            {id: "Engineer", title: "Developer", salary: "500"},
-            {id: "Senior Engineer", title: "Tester", salary: "400"},
-            {id: "Director", title: "PM", salary: "1000"}
+            { id: "Engineer", title: "Developer", salary: "500" },
+            { id: "Senior Engineer", title: "Tester", salary: "400" },
+            { id: "Director", title: "PM", salary: "1000" }
         ]
     }
 
@@ -36,18 +36,29 @@ class NewMyComponent extends React.Component {
         this.setState({
             arrJobs: currentJobs
         })
-    }   
+    }
+
+    // Lifecycle
+    componentDidMount() {
+        console.log(">>> Run component did mount")
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(">>> Run did update:", "prev state: ", prevState, "Current state: ", this.state)
+    }
+
 
     render() {
-        return(
+        console.log(">>> Call render: ", this.state)
+        return (
             <>
-            <AddForm
-                addNewJob={this.addNewJob}
-            />
-            <ConditionOutput
-                arrJobs={this.state.arrJobs}
-                deleteAJob={this.deleteAJob}
-            />
+                <AddForm
+                    addNewJob={this.addNewJob}
+                />
+                <ConditionOutput
+                    arrJobs={this.state.arrJobs}
+                    deleteAJob={this.deleteAJob}
+                />
             </>
         )
 
