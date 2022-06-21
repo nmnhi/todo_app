@@ -24,7 +24,7 @@ class NewMyComponent extends React.Component {
         //     arrJobs: current
         // })
 
-        console.log("Check output", job)
+        // console.log("Check output", job)
         this.setState({
             arrJobs: [...this.state.arrJobs, job]
         })
@@ -53,7 +53,7 @@ class NewMyComponent extends React.Component {
         return (
             <>
                 <AddForm
-                    addNewJob={this.addNewJob}
+                    addNewJobs={this.addNewJob}
                 />
                 <ConditionOutput
                     arrJobs={this.state.arrJobs}

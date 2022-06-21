@@ -7,9 +7,9 @@ class Form extends React.Component {
         firstName: "",
         lastName: "",
         arrJobs: [
-            {id: "Engineer", title: "Developer", salary: "500"},
-            {id: "Senior Engineer", title: "Tester", salary: "400"},
-            {id: "Director", title: "PM", salary: "1000"}
+            { id: "Engineer", title: "Developer", salary: "500" },
+            { id: "Senior Engineer", title: "Tester", salary: "400" },
+            { id: "Director", title: "PM", salary: "1000" }
         ]
     }
 
@@ -25,7 +25,7 @@ class Form extends React.Component {
         })
     }
 
-    handleSubmit = (event) =>{
+    handleSubmit = (event) => {
         event.preventDefault()
         alert("Submit Success!!!")
         console.log(">>> Check data input:", this.state)
@@ -39,15 +39,15 @@ class Form extends React.Component {
                 <form>
                     <label htmlFor="fname">First name:</label><br />
                     <input
-                        type="text" 
+                        type="text"
                         value={this.state.firstName}
                         onChange={(event) => this.handleChangeFirstName(event)}
                     />
                     <br />
                     <label htmlFor="lname">Last name:</label><br />
                     <input
-                        type="text" 
-                        value={this.state.lastName} 
+                        type="text"
+                        value={this.state.lastName}
                         onChange={(event) => this.handleChangeLastName(event)}
                     />
                     <br /><br />
@@ -70,12 +70,12 @@ class Form extends React.Component {
                     address={"Ha Noi"}
                     arrJobs={this.state.arrJobs}
                 />
-                
-                
-            </>
-      )
 
-        
+
+            </>
+        )
+
+
     }
-  }
-  export default Form;
+}
+export default Form;

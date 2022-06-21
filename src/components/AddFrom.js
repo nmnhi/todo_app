@@ -21,18 +21,18 @@ class AddForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(">>> Check data input:", this.state)
+        // console.log(">>> Check data input:", this.state)
         if (!this.state.title || !this.state.salary) {
             alert("Missing parameter!!!")
             return;
         }
 
-        this.props.addNewJob({
+        this.props.addNewJobs({
             id: Math.floor(Math.random() * 1001),
             title: this.state.title,
             salary: this.state.salary
         })
-        alert("Submit Success!!!")
+        // alert("Submit Success!!!")
         this.setState({
             title: "",
             salary: ""
